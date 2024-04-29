@@ -1,0 +1,44 @@
+prop:
+  JWT_SECRET: access_secretaccess_secretaccess_secretaccess_secretaccess_secret
+  REFRESH_SECRET: refresh_secretrefresh_secretrefresh_secretrefresh_secretrefresh_secret
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    tagsSorter: alpha
+    operations-sorter: alpha
+    display-request-duration: true
+spring:
+  threads:
+    virtual:
+      enabled: true
+  aop:
+    proxy-target-class: true
+
+  # main:
+  #   allow-circular-references: true
+  datasource:
+    hikari:
+      data-source-properties.useUnicode: true
+      data-source-properties.characterEncoding: UTF-8
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      # use-new-id-generator-mappings: false
+    generate-ddl: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      additional-paths: .
+logging:
+  level:
+    org:
+      springframework:
+        boot:
+          devtools: DEBUG
+        security: DEBUG
