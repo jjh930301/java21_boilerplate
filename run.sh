@@ -1,0 +1,1 @@
+(./gradlew build --continuous) & ./gradlew bootRun -Dspring.profiles.active=dev
