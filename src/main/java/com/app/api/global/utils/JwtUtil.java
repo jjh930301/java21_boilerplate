@@ -1,4 +1,4 @@
-package com.app.api.utils;
+package com.app.api.global.utils;
 
 import java.security.Key;
 import java.util.Date;
@@ -8,8 +8,8 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import com.app.api.enums.AccessEnum;
-import com.app.api.enums.TokenEnum;
+import com.app.api.global.enums.AccessEnum;
+import com.app.api.global.enums.TokenEnum;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;

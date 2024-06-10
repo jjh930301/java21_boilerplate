@@ -1,4 +1,4 @@
-package com.app.api.enums;
+package com.app.api.global.enums;
 
 public enum AccessEnum {
     USER,

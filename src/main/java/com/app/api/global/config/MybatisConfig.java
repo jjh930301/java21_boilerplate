@@ -1,4 +1,4 @@
-package com.app.api.config;
+package com.app.api.global.config;
 
 import javax.sql.DataSource;
 
@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableTransactionManagement
 @MapperScan(
-    basePackages = "com.app.api.mappers",
+    basePackages = "com.app.api.global.mappers",
 	sqlSessionFactoryRef = "MybatisSqlSessionFactory"
 )
 public class MybatisConfig {

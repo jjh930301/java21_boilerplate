@@ -1,4 +1,4 @@
-package com.app.api.config;
+package com.app.api.global.config;
 
 import java.util.Arrays;
 

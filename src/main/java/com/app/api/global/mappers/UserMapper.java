@@ -1,4 +1,4 @@
-package com.app.api.mappers;
+package com.app.api.global.mappers;
 
 import java.util.HashMap;
 import java.util.List;

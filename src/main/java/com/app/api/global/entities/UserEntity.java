@@ -1,4 +1,4 @@
-package com.app.api.entities;
+package com.app.api.global.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -17,6 +17,6 @@ public class UserEntity {
 	@Column(columnDefinition = "INT UNSIGNED")
 	private Long seq;
 
-  @Column(columnDefinition = "VARCHAR(15) not null")
-  private String phone;
+	@Column(columnDefinition = "VARCHAR(15) not null")
+	private String phone;
 }

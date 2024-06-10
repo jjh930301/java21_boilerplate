@@ -1,4 +1,4 @@
-package com.app.api.annotations;
+package com.app.api.global.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

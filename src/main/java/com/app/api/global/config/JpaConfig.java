@@ -1,4 +1,4 @@
-package com.app.api.config;
+package com.app.api.global.config;
 
 import javax.sql.DataSource;
 
@@ -14,14 +14,13 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 
-import com.app.api.constants.Constant;
+import com.app.api.global.constants.Constant;
 
 import jakarta.persistence.EntityManagerFactory;
 
 
 @Configuration
 @EnableJpaRepositories(
-    basePackages = "com.app.api.repositories",
     entityManagerFactoryRef = "EntityManagerFactory", 
     transactionManagerRef = "JpaTransactionManager"
 )
@@ -48,7 +47,7 @@ public class JpaConfig {
 		HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 		em.setJpaVendorAdapter(vendorAdapter);
 		
-		em.setPackagesToScan("com.app.api.entities");
+		em.setPackagesToScan("com.app.api.global.entities");
 		em.setJpaVendorAdapter(jpaVendorAdapter);
 		return em;
     }

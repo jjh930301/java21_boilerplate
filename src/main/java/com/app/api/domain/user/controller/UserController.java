@@ -1,4 +1,4 @@
-package com.app.api.controllers;
+package com.app.api.domain.user.controller;
 
 import java.util.concurrent.ExecutionException;
 
@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.app.api.annotations.AdminGuard;
-import com.app.api.annotations.ApiController;
-import com.app.api.annotations.SwaggerInfo;
-import com.app.api.annotations.UserGuard;
+import com.app.api.domain.user.service.UserService;
 import com.app.api.global.UserInfo;
-import com.app.api.services.UserService;
+import com.app.api.global.annotations.AdminRole;
+import com.app.api.global.annotations.ApiController;
+import com.app.api.global.annotations.SwaggerInfo;
+import com.app.api.global.annotations.UserRole;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
@@ -40,7 +40,7 @@ public class UserController {
         summary = "auth guard",
         securityRequirements = {"bearerAuth"}
     )
-    @AdminGuard
+    @AdminRole
 	@GetMapping(path = "auth")
 	public ResponseEntity<?> getAuth(
         HttpServletRequest req
@@ -53,7 +53,7 @@ public class UserController {
         summary = "user guard",
         securityRequirements = {"bearerAuth"}
     )
-    @UserGuard
+    @UserRole
     @GetMapping("user")
     public ResponseEntity<?> getUser() throws InterruptedException , ExecutionException  {
         return ResponseEntity.status(HttpStatus.OK).body(this.userService.getUsers());

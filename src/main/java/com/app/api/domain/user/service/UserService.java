@@ -1,20 +1,17 @@
-package com.app.api.services;
+package com.app.api.domain.user.service;
 
 import org.springframework.stereotype.Service;
 import java.util.HashMap;
-import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.app.api.enums.AccessEnum;
-import com.app.api.enums.TokenEnum;
+import com.app.api.global.enums.AccessEnum;
+import com.app.api.global.enums.TokenEnum;
 import com.app.api.global.ApiRes;
-import com.app.api.mappers.UserMapper;
-import com.app.api.utils.JwtUtil;
+import com.app.api.global.mappers.UserMapper;
+import com.app.api.global.utils.JwtUtil;
 
 @Service
 public class UserService {
@@ -47,15 +44,11 @@ public class UserService {
 }
 
 public ApiRes<HashMap<String , Object>> getUsers() throws InterruptedException , ExecutionException {
-    Executor vt = Executors.newVirtualThreadPerTaskExecutor();
 
-    CompletableFuture<List<HashMap<String, String>>> users = 
-        CompletableFuture.supplyAsync(() -> this.userMapper.findAll() , vt);
+    var users = CompletableFuture.supplyAsync(() -> this.userMapper.findAll());
     
-    CompletableFuture<List<HashMap<String, String>>> users2 = 
-        CompletableFuture.supplyAsync(() -> this.userMapper.findAll() , vt);
+    var users2 =  CompletableFuture.supplyAsync(() -> this.userMapper.findAll());
     
-    System.out.println(Thread.currentThread().isVirtual());
     HashMap<String , Object> result = new HashMap<String , Object>(){{
         put("user", users.get());
         put("user2", users2.get());

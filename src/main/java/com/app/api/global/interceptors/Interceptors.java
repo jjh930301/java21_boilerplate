@@ -5,8 +5,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 
-import com.app.api.annotations.AdminGuard;
-import com.app.api.annotations.UserGuard;
+import com.app.api.global.annotations.AdminRole;
+import com.app.api.global.annotations.UserRole;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -29,14 +29,14 @@ public class Interceptors implements HandlerInterceptor{
     ) throws Exception {
     
         if(handler instanceof HandlerMethod handlerMethod) {
-            if(handlerMethod.hasMethodAnnotation(AdminGuard.class)) {
+            if(handlerMethod.hasMethodAnnotation(AdminRole.class)) {
                 boolean verify = this.authInterceptor.verify(request);
                 if(!verify) {
                     throw new Exception();
                 }
                 return true;
             }
-            if(handlerMethod.hasMethodAnnotation(UserGuard.class)) {
+            if(handlerMethod.hasMethodAnnotation(UserRole.class)) {
                 boolean verify = this.userInterceptor.verify(request);
                 if(!verify) {
                     throw new Exception();
