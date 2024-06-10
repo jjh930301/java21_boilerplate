@@ -5,9 +5,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.app.api.global.UserInfo;
 import com.app.api.global.enums.AccessEnum;
 import com.app.api.global.enums.TokenEnum;
+import com.app.api.global.model.UserInfo;
 import com.app.api.global.utils.JwtUtil;
 
 import io.jsonwebtoken.Claims;

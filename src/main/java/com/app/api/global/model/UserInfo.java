@@ -1,4 +1,4 @@
-package com.app.api.global;
+package com.app.api.global.model;
 
 import lombok.Builder;
 import lombok.Data;

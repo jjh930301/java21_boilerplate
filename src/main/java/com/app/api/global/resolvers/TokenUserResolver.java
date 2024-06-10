@@ -9,8 +9,8 @@ import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.ModelAndViewContainer;
 
-import com.app.api.global.UserInfo;
 import com.app.api.global.annotations.TokenUser;
+import com.app.api.global.model.UserInfo;
 
 import jakarta.servlet.http.HttpServletRequest;
 

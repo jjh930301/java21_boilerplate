@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.app.api.global.enums.AccessEnum;
 import com.app.api.global.enums.TokenEnum;
-import com.app.api.global.ApiRes;
 import com.app.api.global.mappers.UserMapper;
+import com.app.api.global.model.ApiRes;
 import com.app.api.global.utils.JwtUtil;
 
 @Service

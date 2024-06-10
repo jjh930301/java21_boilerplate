@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.app.api.domain.user.service.UserService;
-import com.app.api.global.UserInfo;
 import com.app.api.global.annotations.AdminRole;
 import com.app.api.global.annotations.ApiController;
 import com.app.api.global.annotations.SwaggerInfo;
 import com.app.api.global.annotations.UserRole;
+import com.app.api.global.model.UserInfo;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;

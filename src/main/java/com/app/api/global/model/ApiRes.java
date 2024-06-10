@@ -1,4 +1,4 @@
-package com.app.api.global;
+package com.app.api.global.model;
 
 import java.util.ArrayList;
 import java.util.List;
