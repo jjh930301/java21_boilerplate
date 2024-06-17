@@ -2,7 +2,6 @@ package com.app.api.domain.user.controller;
 
 import java.util.concurrent.ExecutionException;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,10 +23,13 @@ import jakarta.servlet.http.HttpServletRequest;
 @RequestMapping(path = "user")
 public class UserController {
 
-  @Autowired
-  private UserService userService;
+    private final UserService userService;
 
-  @SwaggerInfo(
+    public UserController(UserService userService){
+        this.userService = userService;
+    }
+
+    @SwaggerInfo(
         summary = "generate token"
     )
     @PostMapping("")

@@ -22,7 +22,8 @@ import jakarta.persistence.EntityManagerFactory;
 @Configuration
 @EnableJpaRepositories(
     entityManagerFactoryRef = "EntityManagerFactory", 
-    transactionManagerRef = "JpaTransactionManager"
+    transactionManagerRef = "JpaTransactionManager",
+    basePackages = "com.app.api.domain"
 )
 public class JpaConfig {
   
